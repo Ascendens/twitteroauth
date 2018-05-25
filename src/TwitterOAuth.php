@@ -62,6 +62,14 @@ class TwitterOAuth extends Config
     }
 
     /**
+     * @param string $bearerToken
+     */
+    public function setBearerToken($bearerToken)
+    {
+        $this->bearer = $bearerToken;
+    }
+
+    /**
      * @return string|null
      */
     public function getLastApiPath()
