@@ -412,7 +412,7 @@ class TwitterOAuth extends Config
             $url,
             $singWithPayload ? (array) $parameters : []
         );
-        if (array_key_exists('oauth_callback', $parameters)) {
+        if (is_array($parameters) && array_key_exists('oauth_callback', $parameters)) {
             // Twitter doesn't like oauth_callback as a parameter.
             unset($parameters['oauth_callback']);
         }
